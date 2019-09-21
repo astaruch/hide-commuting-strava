@@ -35,7 +35,7 @@ const watchFeed = (mutationsList, observer) => {
   console.log('Change in feed detected')
   for (const mutation of mutationsList) {
     if (mutation.type === 'childList') {
-      mutation.addedNodes.forEach(node => removeIfShort(node))
+      mutation.addedNodes.forEach(removeIfShort)
     }
   }
 }
